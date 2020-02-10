@@ -1,0 +1,16 @@
+nav {
+    height: 100px;
+}
+
+nav .brand-logo {
+    max-height: 100px;
+}
+
+@media (max-width: 425px) {
+    nav .brand-logo {
+        max-height: 70px;
+    }
+    nav.white {
+        height: 70px;
+    }
+}

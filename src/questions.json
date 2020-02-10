@@ -1,0 +1,84 @@
+{
+    "questions": [
+        {
+            "text": "What is Davido's holiday destination for a good time?",
+            "options": [
+                {
+                    "text": "Jamaica",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/255px-Flag_of_Jamaica.svg.png?alt=media&token=d628b196-a73d-43e5-bcaa-00234e889cc3",
+                    "value": 1
+                },
+                {
+                    "text": "USA",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/flag-Stars-and-Stripes-May-1-1795.jpg?alt=media&token=2925525c-7a15-48bc-89cf-25cd151f0e3d",
+                    "value": 0
+                },
+                {
+                    "text": "France",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/france-flag.png?alt=media&token=a23a7fb8-1e7a-4a5c-be07-1cb2d66cccf2",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "text": "In what month was Davido born?",
+            "options": [
+                {
+                    "text": "November",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/1c.png?alt=media&token=526131d8-446e-4398-bfc7-16c02f9d84a6",
+                    "value": 1
+                },
+                {
+                    "text": "April",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/1b.png?alt=media&token=6574853a-b4ed-4838-8e34-ec95acc37781",
+                    "value": 0
+                },
+                {
+                    "text": "July",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/1.png?alt=media&token=a5a25d12-f1f5-4d49-b748-a08428d8e788",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "text": "What's the 7th song on 'A Good Time'?",
+            "options": [
+                {
+                    "text": "Get To You",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/4c.png?alt=media&token=da56f93b-2050-42e4-9f44-ea477d28e393",
+                    "value": 1
+                },
+                {
+                    "text": "Risky",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/4b.png?alt=media&token=91bf456a-eb20-4bbb-9ae1-90baed31b784",
+                    "value": 0
+                },
+                {
+                    "text": "Fall",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/4.png?alt=media&token=69bcaba1-d57b-4c1c-ab2e-38701c077ad4",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "text": "Who produced Skelewu?",
+            "options": [
+                {
+                    "text": "Shizzi",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/3.png?alt=media&token=ac67547a-6a93-4e99-897f-184532f97dbe",
+                    "value": 1
+                },
+                {
+                    "text": "Fresh VDM",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/3c.png?alt=media&token=6ae93a79-a0bf-4c92-91e3-76f0f4a0efa4",
+                    "value": 0
+                },
+                {
+                    "text": "Tekno",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/davido-a-good-time.appspot.com/o/3b.png?alt=media&token=989ee781-7db4-4ea5-b80a-8ee579bb1dfd",
+                    "value": 0
+                }
+            ]
+        }
+    ]
+}

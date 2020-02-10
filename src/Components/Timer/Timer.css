@@ -1,0 +1,38 @@
+.Countdown {
+  margin: 10px auto;
+  /* padding: 50px; */
+  font-family: var(--secondary-font);
+  color: var(--white);
+}
+
+.Countdown-col {
+  display: inline-block;
+}
+
+.Countdown-col-element {
+  display: inline-block;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  border: solid 10px #562a61;
+  color: var(--tertiary-color);
+}
+
+.Countdown-col-element strong {
+  font-size: 100px;
+}
+
+@media(max-width: 425px) {
+  .Countdown-col-element {
+    width: 120px;
+    height: 120px;
+    line-height: 110px;
+  }
+
+  .Countdown-col-element strong {
+    font-size: 60px;
+  }
+  .Countdown .Countdown-col-element span {
+    font-size: 12px;
+  }
+}
