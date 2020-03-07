@@ -20,7 +20,7 @@ export default class Quiz extends Component {
       selected: [],
       endQuiz: false,
       alreadyQuizzed: false,
-      button: <button onClick={this.startQuiz} className="btn btn-secondary waves-effect waves-light">Je commence le test <i className="fas fa-arrow-right"></i></button>,
+      button: <button onClick={this.startQuiz} className="btn btn-secondary waves-effect waves-light">Let's Begin! <i className="fas fa-arrow-right"></i></button>,
       questionsLoaded: false,
       questions: [
         {
