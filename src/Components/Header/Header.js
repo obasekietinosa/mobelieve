@@ -6,7 +6,7 @@ import './Header.css'
 export default class Header extends Component {
   render() {
     return (
-        <nav className="mt-5">
+        <nav className="my-5">
           <Link to="/">
             <img className="brand-logo" src={logo} alt="Big Daddy Mo'" />
           </Link>

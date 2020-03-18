@@ -9,12 +9,9 @@ export default class Quiz extends Component {
   constructor() {
     super();
     this.state = {
-      currentQuestion: "intro",
+      currentQuestion: 0,
       error: "",
       totalQuestions: 8,
-      userName: "",
-      email: "",
-      termsAccepted: false,
       answers: [],
       score: 0,
       selected: [],
@@ -66,53 +63,8 @@ export default class Quiz extends Component {
     return
   }
 
-  setUserName = (e) => {
-    let userName = e.target.value
-    if (userName.length) {
-      this.setState({
-        userName
-      })
-    }
-  }
-
-  setEmail = (e) => {
-    let email = e.target.value
-    if (email.length) {
-      this.setState({
-        email
-      })
-    }
-  }
-
-  acceptTerms = (e) => {
-    let termsAccepted = !this.state.termsAccepted
-    this.setState({ termsAccepted })
-  }
-
   isCurrentQuestion = (question) => {
     return question === this.state.currentQuestion
-  }
-
-  startQuiz = () => {
-    if (this.state.userName.length > 5) {
-      this.setState({
-        error: "Please Use 5 characters or less"
-      })
-      return
-    }
-    if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.state.email))) {
-      this.setState({
-        error: "Please give us a valid email address"
-      })
-      return
-    }
-    if (!this.state.termsAccepted) {
-      this.setState({
-        error: "Please accept the terms to continue."
-      })
-      return
-    }
-    this.setState({ currentQuestion: 0 })
   }
 
   isSelected = (question, option) => {
@@ -160,42 +112,7 @@ export default class Quiz extends Component {
             <Question show={this.isCurrentQuestion("intro")}>
               <div className="form-group text-center col-md-6 offset-md-3">
                 <h3 className="col-sm-12">Before We Begin...</h3>
-                <input
-                  placeholder="Your Monosyllabic Sugar Daddy Name"
-                  onChange={this.setUserName}
-                  value={this.state.userName}
-                  id="name"
-                  name="name"
-                  type="text"
-                  className="form-control mb-3"
-                  maxLength="10"
-                />
-                <input
-                  placeholder="Your Email Address"
-                  onChange={this.setEmail}
-                  value={this.state.email}
-                  id="email"
-                  name="email"
-                  type="email"
-                  className="form-control mb-3"
-                />
-              </div>
-
-              <div className="form-group text-center col-md-6 offset-md-3 checkbox">
-                <label htmlFor="acceptTerms">
-                  <input
-                    id="acceptTerms"
-                    type="checkbox"
-                    onClick={this.acceptTerms}
-                    defaultChecked={this.state.termsAccepted}
-                  />
-                  &nbsp;You accept to be contacted by the Big Daddy Mo' Movement 
-                </label>
-                {/* <p className="col-12 text-center">Nous allons l'utiliser pour imprimer votre certificat</p> */}
-              </div>
-              <div className="col-12 text-center">
-                {this.state.button}
-                <p className="error mt-3">{this.state.error}</p>
+                
               </div>
             </Question>
 
