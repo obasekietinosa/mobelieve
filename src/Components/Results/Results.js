@@ -3,6 +3,8 @@ import glucoseGuardian from '../assets/img/glucoseGuardian.jpg'
 import sugarCaneDaddy from '../assets/img/sugarCaneDaddy.jpg'
 import sucrePapi from '../assets/img/sucrePapi.jpg'
 
+import SocialShare from '../SocialShare/SocialShare';
+
 import './Results.css'
 
 export default class Results extends Component {
@@ -46,33 +48,9 @@ export default class Results extends Component {
             shareText
         })
 
-        if (Math.round(Math.random(0, 1))) {
-            fetch("https://services.etin.space/bolt-campaign/api/green/promo.php", {
-                method: 'GET'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        console.log(data)
-                        let promoCode = data.promo.code
-                        let promoType = data.promo.type
-                        this.setState({ promoCode, promoType, hasPromo: true, error: "" })
-                    }
-                })
-                .catch(error => {
-                    //
-                })
-        }
     }
 
     render() {
-        const imageUrl = "https://services.etin.space/bolt-campaign/api/green/result?score=" + this.props.score + "&name=" + this.props.name
-        const ctaButton = <a
-            href={imageUrl} 
-            target="_blank"
-            className="btn btn-lg btn-primary">
-            Get The Invite
-                        </a>
 
         return (
             <section id="hero">
@@ -95,36 +73,11 @@ export default class Results extends Component {
                                 {this.state.title}
                             </h4>
                             <p style={{ fontWeight: "300" }} dangerouslySetInnerHTML={{ __html: this.state.description }} />
-                            <div className="col-sm-12 share-btns px-0 my-3">
-                                <a
-                                    href={"https://www.facebook.com/sharer/sharer.php?u=https://big-daddy-mo.web.app&quote=" + encodeURI(this.state.shareText) + " #BigDaddyMo"}
-                                    // className="social mb-2 facebook btn-floating"
-                                    className="social mb-2 facebook btn"
-                                    target="_blank"
-                                >
-                                    <i className="fab fa-facebook"></i> Facebook
-                                </a>
-                                &nbsp;
-                                <a
-                                    href={"https://twitter.com/intent/tweet?text=" + encodeURI(this.state.shareText) + "&url=https://big-daddy-mo.web.app&hashtags=BigDaddyMo"}
-                                    // className="social mb-2 twitter btn-floating"
-                                    className="social mb-2 twitter btn"
-                                    target="_blank"
-                                >
-                                    <i className="fab fa-twitter"></i> Twitter
-                                </a>
-                                &nbsp;
-                                <a
-                                    href={"whatsapp://send?text=" + encodeURI(this.state.shareText) + " https://big-daddy-mo.web.app"}
-                                    // className="social mb-2 whatsapp btn-floating"
-                                    className="social mb-2 whatsapp btn"
-                                    target="_blank"
-                                >
-                                    <i className="fab fa-whatsapp"></i> WhatsApp
-                                </a>
-                                &nbsp;
-                            </div>
-                            {ctaButton}
+                            <SocialShare 
+                                text={this.state.shareText}
+                                url={ window.location.href }
+                                tag="BigDaddyMo" 
+                            />
                         </div>
                     </div>
                 </div>
