@@ -105,16 +105,6 @@ export default class Results extends Component {
     }
 
     render() {
-<<<<<<< HEAD
-=======
-        const imageUrl = "https://services.etin.space/bolt-campaign/api/green/result?score=" + this.props.score + "&name=" + this.props.name
-        const ctaButton = <a
-            href={imageUrl}
-            target="_blank"
-            className="btn btn-lg btn-primary">
-            Get The Invite
-                        </a>
->>>>>>> 13f850514cd62658b39024039d17a5bd9198f146
 
         return (
             <section id="hero">
@@ -137,44 +127,11 @@ export default class Results extends Component {
                                 {this.state.title}
                             </h4>
                             <p style={{ fontWeight: "300" }} dangerouslySetInnerHTML={{ __html: this.state.description }} />
-<<<<<<< HEAD
                             <SocialShare 
                                 text={this.state.shareText}
                                 url={ window.location.href }
                                 tag="BigDaddyMo" 
                             />
-=======
-                                <div className="col-sm-12 share-btns px-0 my-3">
-                                    <a
-                                        href={"https://www.facebook.com/sharer/sharer.php?u=https://big-daddy-mo.web.app&quote=" + encodeURI(this.state.shareText) + " #BigDaddyMo"}
-                                        // className="social mb-2 facebook btn-floating"
-                                        className="social mb-2 facebook btn"
-                                        target="_blank"
-                                    >
-                                        <i className="fab fa-facebook"></i> Facebook
-                                    </a>
-                                    &nbsp;
-                                    <a
-                                        href={"https://twitter.com/intent/tweet?text=" + encodeURI(this.state.shareText) + "&url=https://big-daddy-mo.web.app&hashtags=BigDaddyMo"}
-                                        // className="social mb-2 twitter btn-floating"
-                                        className="social mb-2 twitter btn"
-                                        target="_blank"
-                                    >
-                                        <i className="fab fa-twitter"></i> Twitter
-                                    </a>
-                                    &nbsp;
-                                    <a
-                                        href={"whatsapp://send?text=" + encodeURI(this.state.shareText) + " https://big-daddy-mo.web.app"}
-                                        // className="social mb-2 whatsapp btn-floating"
-                                        className="social mb-2 whatsapp btn"
-                                        target="_blank"
-                                    >
-                                        <i className="fab fa-whatsapp"></i> WhatsApp
-                                    </a>
-                                    &nbsp;
-                                </div>
-                            {ctaButton}
->>>>>>> 13f850514cd62658b39024039d17a5bd9198f146
                         </div>
                         <div className="col-sm-12">
                             <input
