@@ -18,7 +18,7 @@ export default class Home extends Component {
               <div className="col-sm-12 col-md-6 panel">
                 <h2>Think you have what it takes to join The Big Daddy Club?</h2>
                 <Link role="button" to="/trivia" className="btn btn-secondary waves-effect waves-light"><i class="fas fa-arrow-right animated pulse infinite"></i> Give me some sugar, baby!</Link>
-                <p>Join us, if you think you've got that Sugar, Daddy</p>
+                <p>Take this quiz, if you think you've got that Sugar, Daddy</p>
               </div>
             </div>
           </div>

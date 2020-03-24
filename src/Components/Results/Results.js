@@ -15,6 +15,7 @@ export default class Results extends Component {
             userName: "",
             email: "",
             termsAccepted: false,
+            infoCollected: false,
 
             image: glucoseGuardian,
             title: "Glucose Guardian",
@@ -28,7 +29,7 @@ export default class Results extends Component {
         const score = this.props.score
         var { image, title, grade, description, buyButton } = this.state
         switch (true) {
-            case score >= 70:
+            case score == 3:
                 image = sucrePapi
                 title = "Sucre Papi"
                 grade = "Sucre Papi"
@@ -36,7 +37,7 @@ export default class Results extends Component {
                 buyButton = <a href="" className="btn btn-secondary waves-effect waves-light">Buy Merchandise</a>
                 break;
 
-            case score >= 40:
+            case score == 2:
                 image = sugarCaneDaddy
                 title = "Sugar Cane Daddy"
                 grade = "Sugar Cane Daddy"
@@ -82,7 +83,7 @@ export default class Results extends Component {
         this.setState({ termsAccepted })
     }
 
-    sendEmail = () => {
+    collectInfo = () => {
         if (this.state.userName.length > 5) {
             this.setState({
                 error: "Please Use 5 characters or less"
@@ -102,75 +103,94 @@ export default class Results extends Component {
             return
         }
 
+        this.setState({ infoCollected:true })
+
     }
 
     render() {
+
+        let results = (
+            <React.Fragment>
+            <div className="col-sm-12 mb-3 col-md-6">
+                <img
+                    className="img-fluid"
+                    src={this.state.image}
+                    style={{
+                        maxHeight: "350px",
+                        margin: "0 auto",
+                        display: "block"
+                    }}
+                />
+                {/* <h2 className="primary-text text-center mt-3 bold">{ this.state.grade }</h2> */}
+            </div>
+            <div className="col-sm-12 mb-3 col-md-6 share-instructions">
+                <h4 className="primary-text">
+                    {this.state.title}
+                </h4>
+                <p style={{ fontWeight: "300" }} dangerouslySetInnerHTML={{ __html: this.state.description }} />
+                <SocialShare 
+                    text={this.state.shareText}
+                    url={ window.location.href }
+                    tag="BigDaddyMo" 
+                />
+            </div> 
+            </React.Fragment>    
+        )
+
+        let collectInfo = (
+            <React.Fragment>
+             <div className="col-sm-12">
+                <h3>Please enter your name and email address to get your results</h3>
+             </div>
+             <div className="col-sm-12">
+                <input
+                    placeholder="Your Monosyllabic Sugar Daddy Name"
+                    onChange={this.setUserName}
+                    value={this.state.userName}
+                    id="name"
+                    name="name"
+                    type="text"
+                    className="form-control mb-3"
+                    maxLength="10"
+                />
+                <input
+                    placeholder="Your Email Address"
+                    onChange={this.setEmail}
+                    value={this.state.email}
+                    id="email"
+                    name="email"
+                    type="email"
+                    className="form-control mb-3"
+                />
+            </div>
+            <div className="form-group text-center col-md-6 offset-md-3 checkbox">
+                <label htmlFor="acceptTerms">
+                    <input
+                        id="acceptTerms"
+                        type="checkbox"
+                        onClick={this.acceptTerms}
+                        defaultChecked={this.state.termsAccepted}
+                    />
+                    &nbsp;You accept to be contacted by the Big Daddy Club
+                </label>
+                {/* <p className="col-12 text-center">Nous allons l'utiliser pour imprimer votre certificat</p> */}
+            </div>
+            <div className="col-12 text-center">
+                <button onClick={this.collectInfo} className="btn btn-primary">Get Results!</button>
+                <p className="error mt-3">{this.state.error}</p>
+            </div>
+            </React.Fragment>
+        )
+        
 
         return (
             <section id="hero">
                 <div className="container">
                     <div className="row">
-                        <div className="col-sm-12 mb-3 col-md-6">
-                            <img
-                                className="img-fluid"
-                                src={this.state.image}
-                                style={{
-                                    maxHeight: "350px",
-                                    margin: "0 auto",
-                                    display: "block"
-                                }}
-                            />
-                            {/* <h2 className="primary-text text-center mt-3 bold">{ this.state.grade }</h2> */}
-                        </div>
-                        <div className="col-sm-12 mb-3 col-md-6 share-instructions">
-                            <h4 className="primary-text">
-                                {this.state.title}
-                            </h4>
-                            <p style={{ fontWeight: "300" }} dangerouslySetInnerHTML={{ __html: this.state.description }} />
-                            <SocialShare 
-                                text={this.state.shareText}
-                                url={ window.location.href }
-                                tag="BigDaddyMo" 
-                            />
-                        </div>
-                        <div className="col-sm-12">
-                            <input
-                                placeholder="Your Monosyllabic Sugar Daddy Name"
-                                onChange={this.setUserName}
-                                value={this.state.userName}
-                                id="name"
-                                name="name"
-                                type="text"
-                                className="form-control mb-3"
-                                maxLength="10"
-                            />
-                            <input
-                                placeholder="Your Email Address"
-                                onChange={this.setEmail}
-                                value={this.state.email}
-                                id="email"
-                                name="email"
-                                type="email"
-                                className="form-control mb-3"
-                            />
-                        </div>
-
-                        <div className="form-group text-center col-md-6 offset-md-3 checkbox">
-                            <label htmlFor="acceptTerms">
-                                <input
-                                    id="acceptTerms"
-                                    type="checkbox"
-                                    onClick={this.acceptTerms}
-                                    defaultChecked={this.state.termsAccepted}
-                                />
-                                &nbsp;You accept to be contacted by the Big Daddy Club
-                            </label>
-                            {/* <p className="col-12 text-center">Nous allons l'utiliser pour imprimer votre certificat</p> */}
-                        </div>
-                        <div className="col-12 text-center">
-                            {this.state.buyButton}
-                            <p className="error mt-3">{this.state.error}</p>
-                        </div>
+                    {
+                        this.state.infoCollected ?
+                            results : collectInfo    
+                    } 
                     </div>
                 </div>
             </section >

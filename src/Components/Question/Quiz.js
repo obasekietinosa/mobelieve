@@ -86,7 +86,7 @@ export default class Quiz extends Component {
     let score = this.state.answers.reduce((sum, element) => {
       return sum + element;
     })
-    score *= 10
+    score = Math.ceil( score/5 )
     console.log(score)
     this.setState({ score })
   }
@@ -156,8 +156,6 @@ export default class Quiz extends Component {
         {
           this.state.alreadyQuizzed ?
             <div className="text-center">
-              <h3>Oups... il semblerait que vous ayez déjà participé.</h3>
-              <h3>Une seule participation est autorisée par personne. 🤗</h3>
             </div>
             :
             this.state.endQuiz ?
