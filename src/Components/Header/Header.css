@@ -1,16 +1,18 @@
 nav {
-    height: 100px;
+    height: 300px;
 }
 
 nav .brand-logo {
-    max-height: 100px;
+    max-height: 300px;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
 @media (max-width: 425px) {
     nav .brand-logo {
-        max-height: 70px;
+        max-height: 200px;
     }
-    nav.white {
-        height: 70px;
+    nav {
+        height: 200px;
     }
 }

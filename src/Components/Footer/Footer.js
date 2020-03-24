@@ -7,7 +7,7 @@ export default class Footer extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <p><span>Powered by</span> <a href="https://twitter.com/wtxtra">WTXtra.</a></p>
+                        <p><span>TrivYeah by</span> <a href="https://twitter.com/wtxtra">WTXtra.</a></p>
                     </div>
                 </div>
             </div>
