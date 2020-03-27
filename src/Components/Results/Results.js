@@ -20,7 +20,7 @@ export default class Results extends Component {
             image: glucoseGuardian,
             title: "Glucose Guardian",
             grade: "Glucose Guardian",
-            description: "You're a Glucose Guardian!",
+            description: "You'll buy anything for your baby as long as it makes her a better person. You often  have lengthy conversations your baby on important things. You often ask her  for advice not because you don't know what to do but you need to see a fresh angle on stuff sometimes. You have a deep connection with your baby.",
             buyLink: "https://paystack.com/pay/glucoseghome",
             buyLinkHome: "https://paystack.com/pay/glucoseghome",
             buyLinkAlt: "https://paystack.com/pay/glucosegaway"
@@ -35,7 +35,7 @@ export default class Results extends Component {
                 image = sucrePapi
                 title = "Sucre Papi"
                 grade = "Sucre Papi"
-                description = "You the Sucre Papi for the Parte after Parte"
+                description = "YoYou'll buy anything for your baby. Anything to make her feel and look special. You are very particular about physical appearance because you always want to show your baby off your friends. 'When you are with the Sucre Papi, you need to look like money', you would say."
                 buyLinkHome = "https://paystack.com/pay/sucrepapihome",
                 buyLinkAlt = "https://paystack.com/pay/sucrepapiaway"
                 break;
@@ -44,7 +44,7 @@ export default class Results extends Component {
                 image = sugarCaneDaddy
                 title = "Sugar Cane Daddy"
                 grade = "Sugar Cane Daddy"
-                description = "Ever ready for the action."
+                description = "YOu'll buy anything for your baby but you'll get it back in king. You are very adventurous and care a lot about sexual prowess. you like a sugar baby for her intelligence, physique but most importantly; her sexual prowess.  You game is to be the tiger or be torn by the tiger. Raaaah!"
                 buyLinkHome = "https://paystack.com/pay/sugarcanezaddyhome",
                 buyLinkAlt = "https://paystack.com/pay/sugarcanezaddyaway"
                 break;
