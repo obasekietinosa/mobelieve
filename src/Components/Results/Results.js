@@ -105,6 +105,17 @@ export default class Results extends Component {
 
         let results = (
             <React.Fragment>
+            <div className="col-sm-12 mb-3 share-instructions">
+                <h4 className="primary-text">
+                    {this.state.title}
+                </h4>
+                <p style={{ fontWeight: "300" }} dangerouslySetInnerHTML={{ __html: this.state.description }} />
+                <SocialShare 
+                    text={this.state.shareText}
+                    url={ window.location.href }
+                    tag="BigDaddyMo" 
+                />
+            </div> 
             <div className="col-sm-12 mb-3 col-md-6">
                 <img
                     className="img-fluid"
@@ -117,17 +128,9 @@ export default class Results extends Component {
                 />
                 <a href={this.state.selectHome ? this.state.buyLinkHome : this.state.buyLinkAlt} className="btn btn-primary">Buy Merchandise</a>
             </div>
-            <div className="col-sm-12 mb-3 col-md-6 share-instructions">
-                <h4 className="primary-text">
-                    {this.state.title}
-                </h4>
-                <p style={{ fontWeight: "300" }} dangerouslySetInnerHTML={{ __html: this.state.description }} />
-                <SocialShare 
-                    text={this.state.shareText}
-                    url={ window.location.href }
-                    tag="BigDaddyMo" 
-                />
-            </div> 
+            <div className="col-sm-12 mb-3 col-md-6">
+                
+            </div>
             </React.Fragment>    
         )
 
