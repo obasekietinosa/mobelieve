@@ -21,7 +21,9 @@ export default class Results extends Component {
             title: "Glucose Guardian",
             grade: "Glucose Guardian",
             description: "You're a Glucose Guardian!",
-            buyButton: <a href="" className="btn btn-secondary waves-effect waves-light">Buy Merchandise</a>
+            buyLink: "https://paystack.com/pay/glucoseghome",
+            buyLinkHome: "https://paystack.com/pay/glucoseghome",
+            buyLinkAlt: "https://paystack.com/pay/glucosegaway"
         }
     }
 
@@ -34,7 +36,8 @@ export default class Results extends Component {
                 title = "Sucre Papi"
                 grade = "Sucre Papi"
                 description = "You the Sucre Papi for the Parte after Parte"
-                buyButton = <a href="" className="btn btn-secondary waves-effect waves-light">Buy Merchandise</a>
+                buyLinkHome = "https://paystack.com/pay/sucrepapihome",
+                buyLinkAlt = "https://paystack.com/pay/sucrepapiaway"
                 break;
 
             case score == 2:
@@ -42,7 +45,8 @@ export default class Results extends Component {
                 title = "Sugar Cane Daddy"
                 grade = "Sugar Cane Daddy"
                 description = "Ever ready for the action."
-                buyButton = <a href="" className="btn btn-secondary waves-effect waves-light">Buy Merchandise</a>
+                buyLinkHome = "https://paystack.com/pay/sugarcanezaddyhome",
+                buyLinkAlt = "https://paystack.com/pay/sugarcanezaddyaway"
                 break;
 
             default:
@@ -55,7 +59,8 @@ export default class Results extends Component {
             grade,
             description,
             shareText,
-            buyButton
+            buyLinkHome,
+            buyLinkAlt
         })
 
     }
@@ -78,11 +83,6 @@ export default class Results extends Component {
         }
     }
 
-    acceptTerms = (e) => {
-        let termsAccepted = !this.state.termsAccepted
-        this.setState({ termsAccepted })
-    }
-
     collectInfo = () => {
         if (this.state.userName.length > 5) {
             this.setState({
@@ -93,12 +93,6 @@ export default class Results extends Component {
         if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.state.email))) {
             this.setState({
                 error: "Please give us a valid email address"
-            })
-            return
-        }
-        if (!this.state.termsAccepted) {
-            this.setState({
-                error: "Please accept the terms to continue."
             })
             return
         }
@@ -121,7 +115,7 @@ export default class Results extends Component {
                         display: "block"
                     }}
                 />
-                {/* <h2 className="primary-text text-center mt-3 bold">{ this.state.grade }</h2> */}
+                <a href={this.state.selectHome ? this.state.buyLinkHome : this.state.buyLinkAlt} className="btn btn-primary">Buy Merchandise</a>
             </div>
             <div className="col-sm-12 mb-3 col-md-6 share-instructions">
                 <h4 className="primary-text">
@@ -162,18 +156,6 @@ export default class Results extends Component {
                     type="email"
                     className="form-control mb-3"
                 />
-            </div>
-            <div className="form-group text-center col-md-6 offset-md-3 checkbox">
-                <label htmlFor="acceptTerms">
-                    <input
-                        id="acceptTerms"
-                        type="checkbox"
-                        onClick={this.acceptTerms}
-                        defaultChecked={this.state.termsAccepted}
-                    />
-                    &nbsp;You accept to be contacted by the Big Daddy Club
-                </label>
-                {/* <p className="col-12 text-center">Nous allons l'utiliser pour imprimer votre certificat</p> */}
             </div>
             <div className="col-12 text-center">
                 <button onClick={this.collectInfo} className="btn btn-primary">Get Results!</button>
